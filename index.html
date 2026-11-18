@@ -1,4 +1,6 @@
-<html lang="pt-br"><head>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Crie, visualize e salve seu currículo profissional com o Perfilize.">
@@ -12,15 +14,37 @@
     </header>
 
     <main>
-        <section class="formulario">
+        <section class="autenticacao" id="painelAcesso">
+            <h2>Minha conta</h2>
+            <p>Entre ou crie uma conta para salvar seus currículos com segurança.</p>
+
+            <label for="emailConta">E-mail:</label>
+            <input type="email" id="emailConta" autocomplete="email" required>
+
+            <label for="senhaConta">Senha:</label>
+            <input type="password" id="senhaConta" autocomplete="current-password" minlength="8" required>
+
+            <div class="botoes-conta">
+                <button type="button" id="entrarConta">Entrar</button>
+                <button type="button" id="criarConta">Criar conta</button>
+            </div>
+            <p id="statusConta" class="status-conta" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="sessao-ativa" id="painelUsuario" hidden>
+            <p>Conta conectada: <strong id="usuarioLogado"></strong></p>
+            <button type="button" id="sairConta">Sair da conta</button>
+        </section>
+
+        <section class="formulario" id="secaoFormulario" hidden>
             <h2 id="tituloFormulario">Cadastrar currículo</h2>
 
             <form id="formCurriculo">
                 <label for="nome">Nome completo:</label>
-                <input type="text" id="nome" name="nome" autocomplete="name" required="">
+                <input type="text" id="nome" name="nome" autocomplete="name" required>
 
                 <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" autocomplete="email" required="">
+                <input type="email" id="email" name="email" autocomplete="email" required>
 
                 <label for="telefone">Telefone:</label>
                 <input type="tel" id="telefone" name="telefone" autocomplete="tel">
@@ -41,13 +65,14 @@
                 <textarea id="habilidades" name="habilidades" placeholder="Ex.: Comunicação, organização, trabalho em equipe"></textarea>
 
                 <button type="submit" id="botaoGerar">Gerar currículo</button>
-                <button type="button" id="cancelarEdicao" hidden="">Cancelar edição</button>
+                <button type="button" id="cancelarEdicao" hidden>Cancelar edição</button>
             </form>
 
-            <button type="button" id="salvar">Salvar currículo</button>
+            <button type="button" id="salvar">Salvar currículo no banco</button>
+            <p id="statusBanco" class="status-banco" role="status" aria-live="polite"></p>
         </section>
 
-        <section class="resultado">
+        <section class="resultado" id="secaoResultado" hidden>
             <h2>Visualização do currículo</h2>
             <div id="curriculo" aria-live="polite">
                 <p>Preencha seus dados e clique em “Gerar currículo”.</p>
@@ -55,16 +80,16 @@
             <button type="button" id="gerarPDF">Gerar PDF</button>
         </section>
 
-        <section class="consultas">
+        <section class="consultas" id="secaoConsultas" hidden>
             <h2>Meus currículos cadastrados</h2>
-            <p>Consulte, edite ou apague os currículos que você salvou neste navegador.</p>
+            <p>Seus currículos são guardados na sua conta e podem ser acessados em outros dispositivos.</p>
             <div id="listaCurriculos">
                 <p>Nenhum currículo cadastrado ainda.</p>
             </div>
         </section>
     </main>
 
-    <script src="app.js" defer=""></script>
-
-
-</body></html>
+    <script src="supabase-config.js"></script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
