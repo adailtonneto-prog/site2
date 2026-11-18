@@ -206,8 +206,8 @@ function atualizarModoFormulario(editando) {
         : 'Gerar currículo';
 
     botaoSalvar.textContent = editando
-        ? 'Salvar alterações no banco'
-        : 'Salvar currículo no banco';
+        ? 'Salvar alterações '
+        : 'Salvar currículo ';
 
     botaoCancelar.hidden = !editando;
 }
