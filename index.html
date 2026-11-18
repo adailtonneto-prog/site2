@@ -1,1 +1,70 @@
+<html lang="pt-br"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Crie, visualize e salve seu currículo profissional com o Perfilize.">
+    <title>Perfilize - Criador de Currículos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <h1>PERFILIZE</h1>
+        <p>Crie seu currículo profissional</p>
+    </header>
 
+    <main>
+        <section class="formulario">
+            <h2 id="tituloFormulario">Cadastrar currículo</h2>
+
+            <form id="formCurriculo">
+                <label for="nome">Nome completo:</label>
+                <input type="text" id="nome" name="nome" autocomplete="name" required="">
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" autocomplete="email" required="">
+
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" autocomplete="tel">
+
+                <label for="cargo">Cargo ou área desejada:</label>
+                <input type="text" id="cargo" name="cargo" placeholder="Ex.: Auxiliar administrativo">
+
+                <label for="objetivo">Objetivo profissional (opcional):</label>
+                <textarea id="objetivo" name="objetivo" placeholder="Conte que tipo de oportunidade procura e o que deseja desenvolver."></textarea>
+
+                <label for="formacao">Formação:</label>
+                <textarea id="formacao" name="formacao" placeholder="Ex.: Ensino médio completo - Escola - 2024"></textarea>
+
+                <label for="experiencia">Experiência profissional:</label>
+                <textarea id="experiencia" name="experiencia" placeholder="Informe empresa, cargo, período e atividades. Se ainda não trabalhou, deixe em branco."></textarea>
+
+                <label for="habilidades">Habilidades:</label>
+                <textarea id="habilidades" name="habilidades" placeholder="Ex.: Comunicação, organização, trabalho em equipe"></textarea>
+
+                <button type="submit" id="botaoGerar">Gerar currículo</button>
+                <button type="button" id="cancelarEdicao" hidden="">Cancelar edição</button>
+            </form>
+
+            <button type="button" id="salvar">Salvar currículo</button>
+        </section>
+
+        <section class="resultado">
+            <h2>Visualização do currículo</h2>
+            <div id="curriculo" aria-live="polite">
+                <p>Preencha seus dados e clique em “Gerar currículo”.</p>
+            </div>
+            <button type="button" id="gerarPDF">Gerar PDF</button>
+        </section>
+
+        <section class="consultas">
+            <h2>Meus currículos cadastrados</h2>
+            <p>Consulte, edite ou apague os currículos que você salvou neste navegador.</p>
+            <div id="listaCurriculos">
+                <p>Nenhum currículo cadastrado ainda.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js" defer=""></script>
+
+
+</body></html>
