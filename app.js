@@ -253,7 +253,7 @@ async function carregarCurriculos() {
 
     consultarCurriculos();
 
-    mostrarStatus(statusBanco, 'Banco de dados conectado.');
+    mostrarStatus(statusBanco, '');
 }
 
 function consultarCurriculos() {
