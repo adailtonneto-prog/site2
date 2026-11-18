@@ -1,1 +1,425 @@
 
+/* =====================================
+   CONFIGURAÇÕES GERAIS
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+/* =====================================
+   CABEÇALHO DO SITE
+===================================== */
+
+.site-header {
+    background: #ffffff;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.site-header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+    color: #222;
+    letter-spacing: 2px;
+}
+
+.site-header p {
+    color: #666;
+}
+
+/* =====================================
+   ESTRUTURA PRINCIPAL
+===================================== */
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 25px;
+    padding: 30px;
+}
+
+.formulario,
+.resultado,
+.consultas {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.formulario {
+    width: 42%;
+}
+
+.resultado {
+    width: 54%;
+}
+
+.consultas {
+    width: 100%;
+}
+
+.formulario h2,
+.resultado h2,
+.consultas h2 {
+    margin-bottom: 20px;
+    color: #222;
+}
+
+/* =====================================
+   FORMULÁRIO
+===================================== */
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+input,
+textarea {
+    display: block;
+    width: 100%;
+    padding: 11px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #333;
+}
+
+textarea {
+    min-height: 85px;
+    resize: vertical;
+}
+
+/* =====================================
+   BOTÕES
+===================================== */
+
+button {
+    background-color: #333;
+    color: #ffffff;
+    border: none;
+    padding: 11px 15px;
+    margin-top: 15px;
+    margin-right: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+#cancelarEdicao {
+    background-color: #777;
+}
+
+/* =====================================
+   VISUALIZAÇÃO DO CURRÍCULO
+===================================== */
+
+#curriculo {
+    background: #ffffff;
+    color: #111111;
+    min-height: 500px;
+    padding: 40px;
+    border: 1px solid #dddddd;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.curriculo-modelo {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    background: #ffffff;
+    color: #111111;
+}
+
+.cv-header {
+    border-bottom: 2px solid #222222;
+    padding-bottom: 22px;
+}
+
+.cv-header h1 {
+    font-size: 38px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+}
+
+.cv-cargo {
+    font-size: 21px;
+    margin: 5px 0 0;
+    color: #333333;
+}
+
+.cv-contato {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    padding: 18px 0;
+    border-bottom: 2px solid #222222;
+    font-size: 17px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.cv-section {
+    margin-top: 35px;
+    break-inside: avoid;
+}
+
+.cv-section h2 {
+    font-size: 23px;
+    font-weight: 800;
+    margin: 0 0 12px;
+    color: #111111;
+}
+
+.cv-content {
+    font-size: 16px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+/* =====================================
+   LISTA DE CURRÍCULOS CADASTRADOS
+===================================== */
+
+#listaCurriculos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.card-curriculo {
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    padding: 18px;
+    background: #fafafa;
+}
+
+.card-curriculo h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    overflow-wrap: anywhere;
+}
+
+.card-curriculo p {
+    margin-bottom: 8px;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.card-curriculo button {
+    font-size: 13px;
+}
+
+.card-curriculo button:nth-of-type(1) {
+    background-color: #333;
+}
+
+.card-curriculo button:nth-of-type(2) {
+    background-color: #2563a6;
+}
+
+.card-curriculo button:nth-of-type(3) {
+    background-color: #b52d2d;
+}
+
+/* =====================================
+   RESPONSIVIDADE
+===================================== */
+
+@media (max-width: 850px) {
+    main {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .formulario,
+    .resultado,
+    .consultas {
+        width: 100%;
+    }
+
+    #curriculo {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 500px) {
+    .site-header h1 {
+        font-size: 26px;
+    }
+
+    .formulario,
+    .resultado,
+    .consultas {
+        padding: 18px;
+    }
+
+    #curriculo {
+        padding: 18px;
+    }
+
+    .cv-header h1 {
+        font-size: 27px;
+    }
+
+    .cv-cargo {
+        font-size: 18px;
+    }
+
+    .cv-contato {
+        flex-direction: column;
+        gap: 10px;
+        font-size: 15px;
+    }
+
+    .cv-section {
+        margin-top: 25px;
+    }
+
+    .cv-section h2 {
+        font-size: 20px;
+    }
+}
+
+/* =====================================
+   IMPRESSÃO E PDF
+===================================== */
+
+@page {
+    size: A4;
+    margin: 15mm;
+}
+
+@media print {
+
+    html,
+    body {
+        background: #ffffff !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    body * {
+        visibility: hidden !important;
+    }
+
+    #curriculo,
+    #curriculo * {
+        visibility: visible !important;
+    }
+
+    #curriculo {
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        min-height: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border: none !important;
+        background: #ffffff !important;
+        color: #111111 !important;
+        overflow: visible !important;
+    }
+
+    .curriculo-modelo {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .cv-header {
+        display: block !important;
+        border-bottom: 2px solid #222222 !important;
+        padding-bottom: 18px !important;
+    }
+
+    .cv-header h1 {
+        font-size: 30px !important;
+        color: #000000 !important;
+        font-weight: 800 !important;
+    }
+
+    .cv-cargo {
+        font-size: 18px !important;
+        color: #222222 !important;
+    }
+
+    .cv-contato {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        border-bottom: 2px solid #222222 !important;
+        padding: 15px 0 !important;
+        gap: 25px !important;
+        color: #000000 !important;
+    }
+
+    .cv-section {
+        display: block !important;
+        margin-top: 28px !important;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .cv-section h2 {
+        display: block !important;
+        font-size: 19px !important;
+        font-weight: 800 !important;
+        color: #000000 !important;
+    }
+
+    .cv-content {
+        display: block !important;
+        font-size: 12px !important;
+        line-height: 1.6 !important;
+        color: #000000 !important;
+        white-space: pre-wrap !important;
+    }
+
+    button,
+    header.site-header,
+    .formulario,
+    .consultas,
+    .resultado > h2 {
+        display: none !important;
+    }
+}
